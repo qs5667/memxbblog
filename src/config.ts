@@ -17,7 +17,7 @@ export const siteConfig: SiteConfig = {
   },
   banner: {
     enable: true,
-    src: "https://api.dujin.org/bing/1920.php", // Relative to the /src directory. Relative to the /public directory if it starts with '/'
+    src: "https://api.dujin.org/bing/1920.php", // Relative to the /src directory. Relative to /public directory if it starts with '/'
     position: "top", // Equivalent to object-position, only supports 'top', 'center', 'bottom'. 'center' by default
     credit: {
       enable: false, // Display the credit text of the banner image
@@ -46,16 +46,16 @@ export const navBarConfig: NavBarConfig = {
     LinkPreset.About,
     {
       name: "GitHub",
-      url: "https://github.com/qs5667/memxbblog", // Internal links should not include the base path, as it is automatically added
+      url: "https://github.com/saicaca/fuwari", // Internal links should not include the base path, as it is automatically added
       external: true, // Show an external link icon and will open in a new tab
     },
   ],
 };
 
 export const profileConfig: ProfileConfig = {
-  avatar: "assets/images/memxb-avatar.png", // Relative to the /src directory. Relative to the /public directory if it starts with '/'
+  avatar: "assets/images/memxb-avatar.png", // Relative to the /src directory. Relative to /public directory if it starts with '/'
   name: "默小班",
-  bio: "一个啥都玩的初中生，喜爱Minecraft和折腾自己的服务器.", // 修复：添加了缺失的开头引号
+  bio: "一个啥都玩的初中生，喜爱Minecraft和折腾自己的服务器.", // 注意这里引号是完整的
   links: [
     {
       name: "GitHub",
@@ -69,6 +69,7 @@ export const profileConfig: ProfileConfig = {
       icon: "fa6-brands:qq",
       url: "https://qm.qq.com/q/J65yD89aQC",
     },
+    // 注意：这里没有重复的 GitHub 链接
   ],
 };
 
