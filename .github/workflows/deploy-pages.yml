@@ -5,7 +5,7 @@ on:
     branches: [ main ]
 
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
@@ -38,10 +38,18 @@ jobs:
           cp CNAME dist/ || true
           cp .nojekyll dist/ || true
 
+      - name: Check GH_PAGES_TOKEN secret
+        run: |
+          if [ -z "${{ secrets.GH_PAGES_TOKEN }}" ]; then
+            echo "GH_PAGES_TOKEN not set — workflow will attempt to use GITHUB_TOKEN; if push fails, add a PAT as GH_PAGES_TOKEN with repo scope.";
+          else
+            echo "GH_PAGES_TOKEN is set — using it.";
+          fi
+
       - name: Deploy to gh-pages branch
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.GH_PAGES_TOKEN || secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
           publish_branch: gh-pages
           # keep_cname: true
