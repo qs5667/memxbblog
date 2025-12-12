@@ -1,8 +1,11 @@
 ---
 title: Markdown Example
-published: 2023-10-01
+published: 2023-10-01T00:00:00.000Z
 description: A simple example of a Markdown blog post.
-tags: [Markdown, Blogging, Demo]
+tags:
+  - Markdown
+  - Blogging
+  - Demo
 category: Examples
 draft: false
 ---
